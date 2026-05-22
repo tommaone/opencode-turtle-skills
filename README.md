@@ -112,11 +112,11 @@ If you want the turtle-dojo rules loaded on **every** opencode session (not just
 ```jsonc
 {
   "instructions": [
-    "/home/you/turtle/.opencode/skills/turtle-dojo/SKILL.md"
+    "/home/you/opencode-turtle-skills/.opencode/skills/turtle-dojo/SKILL.md"
   ],
   "skills": {
     "paths": [
-      "/home/you/turtle/.opencode/skills/turtle-dojo"
+      "/home/you/opencode-turtle-skills/.opencode/skills/turtle-dojo"
     ]
   }
 }
