@@ -105,4 +105,25 @@ Personal learning logs live in `.opencode/skills/turtle-dojo/*.md` — one file 
 
 ---
 
+## Optional: Permanent Activation
+
+If you want the turtle-dojo rules loaded on **every** opencode session (not just inside this repo), add these to `~/.config/opencode/opencode.jsonc`:
+
+```jsonc
+{
+  "instructions": [
+    "/home/you/turtle/.opencode/skills/turtle-dojo/SKILL.md"
+  ],
+  "skills": {
+    "paths": [
+      "/home/you/turtle/.opencode/skills/turtle-dojo"
+    ]
+  }
+}
+```
+
+`instructions` injects the rules into every session's system prompt. `skills.paths` makes the skill discoverable for ad-hoc loading. Adjust the path to your turtle repo location.
+
+---
+
 *Converted from Claude Code plugin format. Original author: [@tommaone](https://github.com/tommaone).*
