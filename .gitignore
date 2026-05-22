@@ -1,3 +1,4 @@
-# Unrelated workspace files
-agent.py
-fibonacci.py
+# Personal evolution logs — local only, never shared
+.opencode/skills/turtle-dojo/*.md
+!.opencode/skills/turtle-dojo/SKILL.md
+!.opencode/skills/turtle-dojo/evolution.md
