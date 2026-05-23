@@ -57,21 +57,17 @@ source ~/.bashrc
 
 ### 3. Configure OpenCode
 
+OpenCode reads its config from `~/.config/opencode/opencode.jsonc`. Use the [example config](opencode.example.jsonc) from this repo as a starting point:
+
 ```bash
-mkdir -p ~/.opencode
+mkdir -p ~/.config/opencode
+cp opencode.example.jsonc ~/.config/opencode/opencode.jsonc
 ```
 
-Create `~/.opencode/config.json`:
+Then edit the config to:
 
-```json
-{
-  "provider": "openai-compatible",
-  "base_url": "http://192.168.16.1:11434/v1",
-  "model": "qwen2.5-coder:7b"
-}
-```
-
-> Replace the IP with your Ollama host's LAN address if running on a separate machine.
+- Set `baseURL` to your Ollama address (WSL: `http://192.168.16.1:11434/v1`, same machine: `http://localhost:11434/v1`, remote: `http://<ip>:11434/v1`)
+- Update `instructions` and `skills.paths` to your local checkout path
 
 ### 4. Run
 

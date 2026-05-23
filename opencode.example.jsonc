@@ -1,0 +1,82 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // ──────────────────────────────────────────────
+  // Ollama (Windows host via WSL gateway)
+  // Update baseURL to your Ollama host's address:
+  //   WSL → http://192.168.16.1:11434/v1
+  //   Same machine → http://localhost:11434/v1
+  //   Remote → http://<ip>:11434/v1
+  // ──────────────────────────────────────────────
+  "provider": {
+    "ollama": {
+      "name": "Ollama",
+      "api": "openai",
+      "options": {
+        "baseURL": "http://192.168.16.1:11434/v1"
+      },
+      "models": {
+        "qwen2.5-coder:7b": {
+          "name": "Qwen 2.5 Coder 7B"
+        }
+      }
+    }
+  },
+  "model": "ollama/qwen2.5-coder:7b",
+
+  // ──────────────────────────────────────────────
+  // Turtle Dojo — load skills from local checkout
+  // ──────────────────────────────────────────────
+  "instructions": [
+    "/path/to/opencode-turtle-skills/.opencode/skills/turtle-dojo/SKILL.md"
+  ],
+  "skills": {
+    "paths": [
+      "/path/to/opencode-turtle-skills/.opencode/skills/turtle-dojo"
+    ]
+  },
+
+  // ──────────────────────────────────────────────
+  // Permissions — YOLO++ style: allow with guardrails
+  // ──────────────────────────────────────────────
+  "permission": {
+    "*": "allow",
+
+    "bash": {
+      "*": "allow",
+      "rm -rf /":              "deny",
+      "rm -rf /*":             "deny",
+      "curl * | sh":           "deny",
+      "curl * | bash":         "deny",
+      "git push --force":          "ask",
+      "git rebase *":              "ask",
+      "git merge *":               "ask"
+    },
+
+    "edit": {
+      "*": "allow",
+      "**/opencode.json":      "ask",
+      "**/opencode.jsonc":     "ask",
+      "**/.env":               "ask",
+      "**/AGENTS.md":          "ask"
+    },
+
+    "read": {
+      "*": "allow",
+      "~/.ssh/**":             "deny",
+      "~/.gnupg/**":           "deny"
+    },
+
+    "external_directory": {
+      "*": "allow",
+      "/etc/**":               "ask",
+      "/proc/**":              "deny",
+      "/sys/**":               "deny"
+    },
+
+    "repo_clone": "ask",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "task": "allow"
+  }
+}
