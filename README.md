@@ -101,7 +101,13 @@ Skills   = behavior layer for structured workflows
 
 ## Evolution Layer
 
-Personal learning logs live in `.opencode/skills/turtle-dojo/*.md` — one file per turtle, never committed to git. Lessons accumulate as you work together.
+Lessons from each session are distilled and committed to each turtle's Hall of Fame (or Hall of Dishonor for Shredder) in their agent files. Universal rules go into the dojo skill at `.opencode/skills/turtle-dojo/SKILL.md`.
+
+Recent additions:
+- **Formula transparency** — engine output carries `_formula` metadata (model, scope, blind spots). LLM cites formula context instead of blindly trusting numbers.
+- **Answer modulation** — LLM calibrates confidence based on gap between model scope and user intent. Data + metadata → calibrated response.
+- **No backticks in template literals** — markdown code fences inside JS template literals cause SyntaxError. Use indentation.
+- **No epistemic collapse** — conclusions inherit uncertainty from analysis layer.
 
 ---
 
