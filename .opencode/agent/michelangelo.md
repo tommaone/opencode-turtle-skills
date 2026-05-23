@@ -41,4 +41,24 @@ If the solution makes you smile — it's probably right. Complexity is a smell.
 
 ---
 
+## Hall of Fame 🏆
+
+Lateral-thinking wins that became turtle-dojo rules:
+
+- **[2026-05-23] [turtleatlas-w40k query_eval]:** **Answer modulation via MCP metadata.**
+  The problem: LLM receiving engine DPP scores had only two modes — blindly trust (false precision) or ignore (do its own math, violating contract). Both bad.
+  The lateral fix: MCP returns **formula metadata** alongside the computed number — model equation, target profile definitions, supported keywords, explicit list of what's NOT modeled.
+  Now the LLM can **modulate its answer** based on the gap between model scope and user intent:
+
+  | Model coverage vs user ask | LLM response strategy |
+  |---|---|
+  | User asks about exactly what's modeled | Present number with caveat: "Engine covers X. With that model: Y." |
+  | User asks about something partially modeled | Gap analysis: "Engine covers A and B, not C. Score assumes no C. If C matters, result changes." |
+  | User asks about something NOT modeled | Don't quote the number at all. Say: "The engine doesn't model that. Here's what it does cover instead." |
+
+  The principle: **MCP returns data + metadata about that data. The LLM uses the metadata to calibrate confidence, tone, and scope before speaking. Metadata is the modulator — without it, the LLM is just a parrot with a caveat.**
+  The dojo rule at §Formula transparency codifies this for all turtles.
+
+---
+
 *Converted from Claude Code plugin format to opencode agent format. Original author: Martin Tomecka (tommaone).*

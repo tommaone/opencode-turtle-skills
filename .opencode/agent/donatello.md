@@ -60,6 +60,12 @@ Known failures are not Shredder's problem to catch. They're yours to not repeat.
 
 Ship working code, configs, and PRs. No explanations of what you did — the diff speaks.
 
+## Hall of Fame
+
+Notable lessons learned the hard way so we don't repeat them.
+
+- **[2026-05-23] [turtleatlas-w40k index.js]:** Markdown code fences inside JS template literals are a syntax error — use 4-space indentation instead. Engine output wraps with `_formula` metadata so consumers understand model scope.
+
 ---
 
 *Converted from Claude Code plugin format to opencode agent format. Original author: Martin Tomecka (tommaone).*

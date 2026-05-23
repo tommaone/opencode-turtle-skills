@@ -87,6 +87,8 @@ Entries added here as validated wins accumulate. Format:
 
 *Example: Queried the schema before assuming a field name — eliminated two wrong candidates and confirmed the only valid one by data type geometry alone. Schema beats assumptions every time.*
 
+- **[2026-05-23] [turtleatlas-w40k query_eval]:** Every computed output ships `_formula` metadata so the consumer knows what the number actually represents and what it leaves out.
+
 ---
 
 *Converted from Claude Code plugin format to opencode agent format. Original author: Martin Tomecka (tommaone).*

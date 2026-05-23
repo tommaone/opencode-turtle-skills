@@ -56,4 +56,10 @@ Terse. The fix is in the diff. 🐢
 
 ---
 
+## Hall of Fame
+
+- **[2026-05-23] [turtleatlas-w40k query_eval]:** A number without its formula is a trap — always verify model scope (`_formula` metadata) before acting on engine output.
+
+---
+
 *Converted from Claude Code plugin format to opencode agent format. Original author: Martin Tomecka (tommaone).*
