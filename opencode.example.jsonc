@@ -16,13 +16,13 @@
         "baseURL": "http://192.168.16.1:11434/v1"
       },
       "models": {
-        "qwen2.5-coder:7b": {
-          "name": "Qwen 2.5 Coder 7B"
+        "PLACEHOLDER_MODEL_ID": {
+          "name": "PLACEHOLDER_MODEL_NAME"
         }
       }
     }
   },
-  "model": "ollama/qwen2.5-coder:7b",
+  "model": "ollama/PLACEHOLDER_MODEL_ID",
 
   // ──────────────────────────────────────────────
   // Turtle Dojo — load skills from local checkout
