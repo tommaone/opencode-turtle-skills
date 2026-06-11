@@ -128,4 +128,15 @@ If you want the turtle-dojo rules loaded on **every** opencode session (not just
 
 ---
 
+## Related repos
+
+| Platform | Repo |
+|----------|------|
+| Claude Code | [tommaone/claude-skills](https://github.com/tommaone/claude-skills) |
+| GitHub Copilot CLI | [tommaone/copilot-turtle-skills](https://github.com/tommaone/copilot-turtle-skills) |
+| opencode | [tommaone/opencode-turtle-skills](https://github.com/tommaone/opencode-turtle-skills) ← you are here |
+| Kiro | [tommaone/kiro-turtle-skills](https://github.com/tommaone/kiro-turtle-skills) |
+
+---
+
 *Converted from Claude Code plugin format. Original author: [@tommaone](https://github.com/tommaone).*
