@@ -126,6 +126,28 @@ If you want the turtle-dojo rules loaded on **every** opencode session (not just
 
 `instructions` injects the rules into every session's system prompt. `skills.paths` makes the skill discoverable for ad-hoc loading. Adjust the path to your turtle repo location.
 
+### 5. Make Turtleman the default agent
+
+Symlink the turtleman agent into opencode's global agents directory and set it as default:
+
+```bash
+# Create the agents directory
+mkdir -p ~/.config/opencode/agents
+
+# Symlink turtleman from this repo
+ln -s /path/to/opencode-turtle-skills/.opencode/agent/turtleman.md ~/.config/opencode/agents/turtleman.md
+```
+
+Then add `default_agent` to `~/.config/opencode/opencode.jsonc`:
+
+```jsonc
+{
+  "default_agent": "turtleman"
+}
+```
+
+Turtleman loads automatically on every opencode start. The symlink keeps the git repo as the single source of truth — pull updates and they apply immediately.
+
 ---
 
 ## Related repos
