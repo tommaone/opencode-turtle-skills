@@ -334,3 +334,19 @@ For reference, the violations from the 2-day 40k DPP session:
 | No backup before filter-branch | `git filter-branch` without `backup/` branch | History rewrite protocol |
 
 **Zero-collapse guarantee extended:** The same epistemic rigour we apply to data output, we now apply to git operations. No compressed git decisions.
+
+---
+
+## Todo-list discipline — always current, never decorative
+
+The todo list is a **live status board**, not a plan doc. A stale todo list confuses the user into thinking work is unfinished (or finished) when the opposite is true.
+
+**Rules — no exceptions:**
+
+1. **Create the todo list at task start** — if the task has 3+ distinct steps, plan it in `todowrite` before touching any file.
+2. **Update as you go, not at the end** — each completed step is marked `completed` in the same tool call where the work finishes. Never batch a bunch of "oh right, all done" updates after the fact.
+3. **Keep exactly one `in_progress`** — the step being worked right now. When blocked, keep it `in_progress` and add a follow-up item describing the blocker.
+4. **Capture the user's explicit plan verbatim** — if the user hands you a list of steps (from a previous session, a ticket, a message), reproduce their items in `todowrite` with their wording so the status board matches what they expect to see.
+5. **The final item is the handoff** — "commit, ask before push" (or equivalent) stays `in_progress` until the user answers. A todo list that shows everything done while a push is pending is a lie.
+
+**Why it matters:** the user reads the todo list as ground truth. Every tick of drift between the board and reality is a small erosion of trust. "idk, probably" is what you get when the board says nothing about the pending push.
